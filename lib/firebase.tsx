@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import firebase from 'firebase/app'
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
@@ -15,10 +15,12 @@ const firebaseConfig = {
   measurementId: "G-5PL6VN80L0"
 };
 
-if (!firebase.app.length) {
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig)
 }
-
 export const auth = firebase.auth();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
